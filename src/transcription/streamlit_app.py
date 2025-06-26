@@ -528,7 +528,8 @@ Conversation:
                 data=text_content,
                 file_name=f"chat_{session_data.get('patient_name', 'patient')}_{session_data.get('session_date', datetime.now().strftime('%Y-%m-%d'))}.txt",
                 mime="text/plain",
-                help="Download conversation as text file"
+                help="Download conversation as text file",
+                key=f"download_chat_{session_data.get('id', 'unknown')}"
             )
         
         # Create chat container with improved WhatsApp styling
@@ -1089,7 +1090,8 @@ def main():
                             "📥 Download Transcription",
                             data=result['transcription_text'],
                             file_name=f"transcription_{patient_name}_{session_date}.txt",
-                            mime="text/plain"
+                            mime="text/plain",
+                            key=f"download_transcription_{result.get('id', 'new')}"
                         )
                     
                     st.rerun()  # Refresh to show new session
