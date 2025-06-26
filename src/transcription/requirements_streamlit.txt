@@ -1,0 +1,9 @@
+streamlit
+plotly
+pandas
+openai
+python-dotenv
+whisper
+torch
+langchain
+pathlib 
